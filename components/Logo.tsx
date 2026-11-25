@@ -1,4 +1,4 @@
-// Знак Nimbus Pulse: скруглённый квадрат, внутри «облако» из двух дуг и линия пульса.
+// Знак Nimbus Pulse, вариант E: круг с волной внутри.
 // Монохромный, наследует цвет через currentColor.
 type Props = {
   size?: number;
@@ -16,20 +16,12 @@ export default function Logo({ size = 24, className }: Props) {
       focusable="false"
       className={className}
     >
-      <rect x="1" y="1" width="30" height="30" rx="9" stroke="currentColor" strokeOpacity="0.35" strokeWidth="1" />
+      <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="1.4" />
       <path
-        d="M9 19.5a4.5 4.5 0 0 1 .4-8.97A6 6 0 0 1 21 11.6a3.9 3.9 0 0 1 .5 7.9H9Z"
+        d="M7 18q2.3-4 4.5 0t4.5 0 4.5 0 3.5 0"
         stroke="currentColor"
         strokeWidth="1.6"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M10.5 22.2h2.2l1.4-2.6 2.1 4.6 1.9-3.4h1.7l.7-1.2 1.1 0"
-        stroke="currentColor"
-        strokeWidth="1.4"
         strokeLinecap="round"
-        strokeLinejoin="round"
-        opacity="0.85"
       />
     </svg>
   );
