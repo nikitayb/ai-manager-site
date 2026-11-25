@@ -1,4 +1,5 @@
 import ChatPanel from './ChatPanel';
+import { siteConfig } from '@/content/site';
 
 export default function Hero() {
   return (
@@ -10,7 +11,7 @@ export default function Hero() {
         <span className="eyebrow">AI ДЛЯ СОВРЕМЕННОГО БИЗНЕСА</span>
 
         <h1 className="mt-6 text-4xl font-medium leading-tight tracking-tight sm:text-6xl">
-          Ваш интеллектуальный AI-менеджер для бизнеса
+          <span className="font-display">{siteConfig.name}</span> — ваш интеллектуальный AI-менеджер для бизнеса
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-400 sm:text-lg">
