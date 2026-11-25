@@ -1,14 +1,6 @@
 import type { Metadata } from 'next';
-import { Inter, Sora } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/content/site';
-
-const sora = Sora({
-  subsets: ['latin', 'cyrillic'],
-  variable: '--font-sora',
-  weight: ['500'],
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -31,7 +23,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={`${inter.variable} ${sora.variable}`}>
+    <html lang="ru">
       <body className="font-sans antialiased">{children}</body>
     </html>
   );
