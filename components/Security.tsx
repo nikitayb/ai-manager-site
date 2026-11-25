@@ -1,3 +1,4 @@
+import SectionArtwork from "./SectionArtwork";
 import * as Icons from 'lucide-react';
 import Reveal from './Reveal';
 import { security } from '@/content/site';
@@ -5,7 +6,8 @@ import { security } from '@/content/site';
 export default function Security() {
   const Shield = Icons.ShieldCheck;
   return (
-    <section aria-labelledby="security-title" className="px-6 py-24">
+    <section aria-labelledby="security-title" className="section-theme px-6 py-24">
+      <SectionArtwork kind="security" />
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Безопасность</p>

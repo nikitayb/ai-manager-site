@@ -1,9 +1,11 @@
+import SectionArtwork from "./SectionArtwork";
 import Reveal from './Reveal';
 import { industries } from '@/content/site';
 
 export default function Industries() {
   return (
-    <section id="industries" aria-labelledby="industries-title" className="px-6 py-24">
+    <section id="industries" aria-labelledby="industries-title" className="section-theme px-6 py-24">
+      <SectionArtwork kind="industries" />
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Решения</p>

@@ -1,3 +1,4 @@
+import SectionArtwork from "./SectionArtwork";
 import * as Icons from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import Reveal from './Reveal';
@@ -7,7 +8,8 @@ const iconMap = Icons as unknown as Record<string, LucideIcon>;
 
 export default function Features() {
   return (
-    <section id="features" aria-labelledby="features-title" className="px-6 py-24">
+    <section id="features" aria-labelledby="features-title" className="section-theme px-6 py-24">
+      <SectionArtwork kind="features" />
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Возможности</p>

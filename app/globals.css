@@ -115,3 +115,80 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* Decorative monochrome artwork for the individual sections. */
+.section-theme {
+  position: relative;
+  isolation: isolate;
+}
+.section-art {
+  position: absolute;
+  z-index: -1;
+  inset-block-start: 34px;
+  inset-inline-end: max(32px, calc((100% - 1140px) / 2));
+  display: grid;
+  place-items: center;
+  width: clamp(92px, 13vw, 166px);
+  aspect-ratio: 1;
+  pointer-events: none;
+  color: #ccc;
+}
+.section-art-shape, .section-art-trace {
+  position: absolute;
+  inset: 8%;
+  border: 1px solid #ffffff27;
+  border-radius: 32%;
+  transform: rotate(-16deg);
+}
+.section-art-shape {
+  background: radial-gradient(ellipse at 30% 20%, #cccccc21, transparent 74%);
+}
+.section-art-trace {
+  inset: 1%;
+  border-color: #ffffff16;
+  transform: rotate(13deg);
+}
+.section-art-icon {
+  display: grid;
+  place-items: center;
+  width: 47%;
+  aspect-ratio: 1;
+  border: 1px solid #ffffff35;
+  border-radius: 26%;
+  background: #181818;
+  box-shadow: 0 5px 38px #bcbcbc20;
+}
+.section-art-icon svg { width: 55%; height: 55%; }
+.section-art[data-kind="chat"] {
+  inset-block-start: 128px;
+  inset-inline-end: max(28px, calc((100% - 1240px) / 2));
+  width: clamp(116px, 15vw, 210px);
+}
+.section-art:is([data-kind="chat"], [data-kind="integrations"], [data-kind="faq"]) :is(.section-art-shape,.section-art-trace) {
+  border-radius: 50%;
+}
+.section-art:is([data-kind="demo"], [data-kind="contact"]) .section-art-trace {
+  border-radius: 12%;
+  transform: rotate(40deg) scale(.77);
+}
+.section-art:is([data-kind="process"], [data-kind="pricing"]) .section-art-shape {
+  border-radius: 18%;
+  transform: rotate(-26deg);
+}
+.section-art:is([data-kind="security"], [data-kind="benefits"]) .section-art-trace {
+  border-style: dashed;
+}
+@media (max-width: 640px) {
+  .section-art {
+    inset-block-start: 30px;
+    inset-inline-end: 23px;
+    width: 75px;
+    opacity: .6;
+  }
+  .section-art[data-kind="chat"] {
+    inset-block-start: 98px;
+    inset-inline-end: 20px;
+    width: 74px;
+    opacity: .45;
+  }
+}

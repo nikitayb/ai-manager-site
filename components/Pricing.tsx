@@ -1,3 +1,4 @@
+import SectionArtwork from "./SectionArtwork";
 import * as Icons from 'lucide-react';
 import Reveal from './Reveal';
 import { pricing } from '@/content/site';
@@ -6,7 +7,8 @@ import { pricing } from '@/content/site';
 export default function Pricing() {
   const Check = Icons.Check;
   return (
-    <section id="pricing" aria-labelledby="pricing-title" className="px-6 py-24">
+    <section id="pricing" aria-labelledby="pricing-title" className="section-theme px-6 py-24">
+      <SectionArtwork kind="pricing" />
       <div className="mx-auto max-w-3xl">
         <Reveal className="text-center">
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Тарифы</p>

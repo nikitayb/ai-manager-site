@@ -1,9 +1,11 @@
+import SectionArtwork from "./SectionArtwork";
 import Reveal from './Reveal';
 import { integrations } from '@/content/site';
 
 export default function Integrations() {
   return (
-    <section aria-labelledby="integrations-title" className="px-6 py-20">
+    <section aria-labelledby="integrations-title" className="section-theme px-6 py-20">
+      <SectionArtwork kind="integrations" />
       <Reveal className="mx-auto max-w-5xl text-center">
         <h2 id="integrations-title" className="text-2xl font-medium sm:text-3xl">
           Работает там, где общаются ваши клиенты
