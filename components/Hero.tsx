@@ -1,13 +1,5 @@
 import ChatPanel from './ChatPanel';
-import { siteConfig, channelBadges } from '@/content/site';
-
-// Позиции каналов на орбите вокруг чата (только для широких экранов)
-const orbitPositions = [
-  'left-1/2 top-0 -translate-x-1/2 -translate-y-1/2',
-  'right-0 top-1/2 translate-x-1/2 -translate-y-1/2',
-  'left-1/2 bottom-0 -translate-x-1/2 translate-y-1/2',
-  'left-0 top-1/2 -translate-x-1/2 -translate-y-1/2',
-];
+import { siteConfig } from '@/content/site';
 
 export default function Hero() {
   return (
@@ -32,38 +24,10 @@ export default function Hero() {
           <a href="#features" className="btn-ghost focus-ring">Узнать возможности</a>
         </div>
 
-        {/* Орбита каналов вокруг чата: на широком экране */}
-        <div className="relative mx-auto mt-16 hidden max-w-2xl sm:block">
-          <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-[112%] w-[104%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
-          <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-1/2 h-[78%] w-[86%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-white/10" />
-
-          <div className="relative mx-auto max-w-xl">
-            <ChatPanel />
-          </div>
-
-          {channelBadges.map((c, i) => (
-            <span
-              key={c.name}
-              className={`absolute ${orbitPositions[i]} rounded-full border border-white/20 bg-ink px-4 py-2 text-xs text-neutral-200 shadow-[0_0_20px_rgba(255,255,255,0.08)]`}
-            >
-              {c.name}
-            </span>
-          ))}
-        </div>
-
-        {/* Мобильная версия: каналы строкой под чатом */}
-        <div className="mx-auto mt-12 max-w-xl sm:hidden">
+        <div className="mx-auto mt-14 max-w-xl">
           <ChatPanel />
-          <ul className="mt-4 flex flex-wrap justify-center gap-2">
-            {channelBadges.map((c) => (
-              <li key={c.name} className="rounded-full border border-white/20 px-3 py-1.5 text-xs text-neutral-200">
-                {c.name}
-              </li>
-            ))}
-          </ul>
+          <p className="mt-3 text-xs text-neutral-500">Демонстрационный пример: ответы заранее подготовлены</p>
         </div>
-
-        <p className="mt-10 text-xs text-neutral-500">Демонстрационный пример: ответы заранее подготовлены</p>
       </div>
     </section>
   );

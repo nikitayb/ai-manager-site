@@ -23,14 +23,6 @@ export const heroChatChips = ['Сколько стоит услуга?', 'Зап
 export const heroChatReply =
   'Это демонстрационный ответ. После подключения AI-менеджер ответит на ваш вопрос по базе знаний компании.';
 
-// Каналы для орбиты в первом экране. Логотипы заменяются на официальные позже.
-export const channelBadges = [
-  { name: 'Telegram' },
-  { name: 'WhatsApp' },
-  { name: 'VK' },
-  { name: 'Сайт' },
-];
-
 export const integrations = [
   { name: 'Telegram' },
   { name: 'WhatsApp Business' },
