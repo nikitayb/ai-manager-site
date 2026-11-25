@@ -1,15 +1,9 @@
-import * as Icons from 'lucide-react';
-import type { LucideIcon } from 'lucide-react';
 import Reveal from './Reveal';
-import Decor from './Decor';
 import { features } from '@/content/site';
-
-const iconMap = Icons as unknown as Record<string, LucideIcon>;
 
 export default function Features() {
   return (
-    <section id="features" aria-labelledby="features-title" className="relative overflow-hidden band px-6 py-24">
-      <Decor left="cube" right="wave" />
+    <section id="features" aria-labelledby="features-title" className="band px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Возможности</p>
@@ -19,23 +13,15 @@ export default function Features() {
         </Reveal>
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((f, i) => {
-            const Icon = iconMap[f.icon];
-            return (
-              <Reveal key={f.title} delay={(i % 3) * 0.05}>
-                <article className="card-tone card-hover h-full rounded-2xl p-6">
-                  <div className="flex items-center justify-between">
-                    <div className="tile flex h-11 w-11 items-center justify-center rounded-xl">
-                      {Icon && <Icon aria-hidden="true" className="h-5 w-5 text-white" />}
-                    </div>
-                    <span className="font-display text-xs text-neutral-600">{String(i + 1).padStart(2, '0')}</span>
-                  </div>
-                  <h3 className="mt-6 text-base font-medium">{f.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-400">{f.text}</p>
-                </article>
-              </Reveal>
-            );
-          })}
+          {features.map((f, i) => (
+            <Reveal key={f.title} delay={(i % 3) * 0.05}>
+              <article className="card-tone card-hover h-full rounded-2xl p-6">
+                <span className="font-display text-xs text-neutral-500">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="mt-6 text-base font-medium">{f.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-400">{f.text}</p>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

@@ -1,13 +1,10 @@
-import { Check } from 'lucide-react';
 import Reveal from './Reveal';
-import Decor from './Decor';
 import { pricing } from '@/content/site';
 
 // Один тариф. Цену и список функций меняйте в content/site.ts.
 export default function Pricing() {
   return (
     <section id="pricing" aria-labelledby="pricing-title" className="relative overflow-hidden px-6 py-24">
-      <Decor left="price" right="cube" />
       <div className="mx-auto max-w-4xl">
         <Reveal className="text-center">
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Тарифы</p>
@@ -39,9 +36,7 @@ export default function Pricing() {
                 <ul className="grid gap-3">
                   {pricing.features.map((f) => (
                     <li key={f} className="flex items-start gap-3 text-sm text-neutral-200">
-                      <span className="tile mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full">
-                        <Check aria-hidden="true" className="h-3 w-3 text-white" />
-                      </span>
+                      <span aria-hidden="true" className="mt-2 h-px w-3 shrink-0 bg-white/60" />
                       {f}
                     </li>
                   ))}
