@@ -153,6 +153,16 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
+/* Пульсы в карте сигнала: бегущая пунктирная линия, видна только при движении */
+.flow {
+  stroke-dasharray: 4 6;
+  animation: flowDash 2.4s linear infinite;
+}
+
+@keyframes flowDash {
+  to { stroke-dashoffset: -20; }
+}
+
 /* Окно мессенджера */
 .window {
   background: #0a0a0a;
