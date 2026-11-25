@@ -5,8 +5,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['var(--font-sora)', 'Sora', 'var(--font-inter)', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Sora', 'Inter', 'sans-serif'],
       },
       colors: {
         // Монохромная палитра, как на скриншоте-референсе

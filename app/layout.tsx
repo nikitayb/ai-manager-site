@@ -3,12 +3,6 @@ import { Inter, Sora } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/content/site';
 
-const inter = Inter({
-  subsets: ['latin', 'cyrillic'],
-  variable: '--font-inter',
-  display: 'swap',
-});
-
 const sora = Sora({
   subsets: ['latin', 'cyrillic'],
   variable: '--font-sora',
