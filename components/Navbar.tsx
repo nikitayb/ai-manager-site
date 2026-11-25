@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { navItems } from '@/content/site';
+import { navItems, siteConfig } from '@/content/site';
+import Logo from './Logo';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -10,8 +11,8 @@ export default function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-ink/70 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4">
         <a href="#top" className="focus-ring flex items-center gap-2 text-sm font-medium">
-          <span aria-hidden="true" className="inline-block h-5 w-5 rounded-md bg-white" />
-          AI Manager
+          <Logo size={24} className="text-white" />
+          {siteConfig.name}
         </a>
 
         <nav aria-label="Основная навигация" className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/5 p-1 lg:flex">

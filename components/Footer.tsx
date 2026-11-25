@@ -1,4 +1,5 @@
 import { navItems, siteConfig } from '@/content/site';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
@@ -6,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-4">
         <div className="md:col-span-1">
           <a href="#top" className="focus-ring flex items-center gap-2 text-sm font-medium">
-            <span aria-hidden="true" className="inline-block h-5 w-5 rounded-md bg-white" />
+            <Logo size={24} className="text-white" />
             {siteConfig.name}
           </a>
           <p className="mt-3 text-sm leading-relaxed text-neutral-500">
