@@ -1,4 +1,4 @@
-// Знак Nimbus Pulse, вариант E: круг с волной внутри.
+// Знак Nimbus Pulse, вариант D: линия пульса.
 // Монохромный, наследует цвет через currentColor.
 type Props = {
   size?: number;
@@ -16,12 +16,12 @@ export default function Logo({ size = 24, className }: Props) {
       focusable="false"
       className={className}
     >
-      <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="1.4" />
       <path
-        d="M7 18q2.3-4 4.5 0t4.5 0 4.5 0 3.5 0"
+        d="M3 16h5l2-6 4 12 3-9 2 3h10"
         stroke="currentColor"
-        strokeWidth="1.6"
+        strokeWidth="1.8"
         strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
