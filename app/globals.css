@@ -153,6 +153,27 @@ body {
   animation: float 6s ease-in-out infinite;
 }
 
+/* Светящаяся линия между этапами и каналами */
+.line-flow {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  background-size: 200% 100%;
+  animation: lineSweep 4s linear infinite;
+}
+
+@keyframes lineSweep {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+
+/* Свечение при наведении (без цветных оттенков) */
+.glow-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 36px rgba(255, 255, 255, 0.1);
+}
+
 /* Окно мессенджера */
 .window {
   background: #0a0a0a;
