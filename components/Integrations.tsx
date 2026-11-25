@@ -1,24 +1,28 @@
 import Reveal from './Reveal';
-import SignalMap from './SignalMap';
+import Decor from './Decor';
+import { integrations } from '@/content/site';
 
 export default function Integrations() {
   return (
-    <section aria-labelledby="integrations-title" className="px-6 py-24">
-      <div className="mx-auto max-w-5xl">
-        <Reveal className="text-center">
-          <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Каналы</p>
-          <h2 id="integrations-title" className="mt-3 text-2xl font-medium sm:text-3xl">
-            Работает там, где общаются ваши клиенты
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-sm text-neutral-400">
-            Все каналы ведут к одному AI-менеджеру. Клиент получает одинаковые ответы, где бы ни написал.
-          </p>
-        </Reveal>
+    <section aria-labelledby="integrations-title" className="relative overflow-hidden px-6 py-20">
+      <Decor left="channels" right="rings" />
+      <Reveal className="mx-auto max-w-5xl text-center">
+        <h2 id="integrations-title" className="text-2xl font-medium sm:text-3xl">
+          Работает там, где общаются ваши клиенты
+        </h2>
 
-        <Reveal delay={0.1} className="mt-14">
-          <SignalMap />
-        </Reveal>
-      </div>
+        <ul className="mt-10 flex flex-wrap justify-center gap-4">
+          {integrations.map((item) => (
+            <li
+              key={item.name}
+              className="card-hover glass flex h-20 min-w-[180px] items-center justify-center rounded-2xl px-6 text-sm text-neutral-200"
+            >
+              {/* TODO: заменить текст на официальный логотип из public/logos (см. README) */}
+              {item.name}
+            </li>
+          ))}
+        </ul>
+      </Reveal>
     </section>
   );
 }
