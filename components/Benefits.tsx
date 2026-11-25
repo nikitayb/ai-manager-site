@@ -1,11 +1,13 @@
 import * as Icons from 'lucide-react';
 import Reveal from './Reveal';
+import Decor from './Decor';
 import { benefits } from '@/content/site';
 
 export default function Benefits() {
   const Check = Icons.Check;
   return (
-    <section aria-labelledby="benefits-title" className="px-6 py-24">
+    <section aria-labelledby="benefits-title" className="relative overflow-hidden px-6 py-24">
+      <Decor left="cube" />
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Преимущества</p>

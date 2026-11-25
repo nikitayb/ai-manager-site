@@ -10,6 +10,7 @@ import {
   type LucideIcon,
 } from 'lucide-react';
 import Reveal from './Reveal';
+import Decor from './Decor';
 import { industries } from '@/content/site';
 
 // Иконки в том же порядке, что и отрасли в content/site.ts
@@ -17,7 +18,8 @@ const icons: LucideIcon[] = [Scissors, Stethoscope, Car, Dumbbell, UtensilsCross
 
 export default function Industries() {
   return (
-    <section id="industries" aria-labelledby="industries-title" className="px-6 py-24">
+    <section id="industries" aria-labelledby="industries-title" className="relative overflow-hidden px-6 py-24">
+      <Decor left="icons" right="cube" />
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Решения</p>

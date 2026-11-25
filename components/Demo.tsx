@@ -1,9 +1,11 @@
 import Reveal from './Reveal';
+import Decor from './Decor';
 import ScenarioDemo from './ScenarioDemo';
 
 export default function Demo() {
   return (
-    <section id="demo" aria-labelledby="demo-title" className="px-6 py-24">
+    <section id="demo" aria-labelledby="demo-title" className="relative overflow-hidden px-6 py-24">
+      <Decor left="icons" right="rings" />
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Демонстрация</p>

@@ -1,9 +1,11 @@
 import Reveal from './Reveal';
+import Decor from './Decor';
 import ContactForm from './ContactForm';
 
 export default function FinalCTA() {
   return (
     <section id="contact" aria-labelledby="cta-title" className="relative overflow-hidden px-6 py-28">
+      <Decor left="cube" right="wave" />
       <div className="dot-grid pointer-events-none absolute inset-0" aria-hidden="true" />
       <Reveal className="relative mx-auto max-w-3xl text-center">
         <h2 id="cta-title" className="text-3xl font-medium leading-tight sm:text-5xl">

@@ -1,13 +1,15 @@
 import * as Icons from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import Reveal from './Reveal';
+import Decor from './Decor';
 import { features } from '@/content/site';
 
 const iconMap = Icons as unknown as Record<string, LucideIcon>;
 
 export default function Features() {
   return (
-    <section id="features" aria-labelledby="features-title" className="band px-6 py-24">
+    <section id="features" aria-labelledby="features-title" className="relative overflow-hidden band px-6 py-24">
+      <Decor left="cube" right="wave" />
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Возможности</p>

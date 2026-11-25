@@ -1,5 +1,6 @@
 import { Database, EyeOff, KeyRound, Lock, UserCheck, type LucideIcon } from 'lucide-react';
 import Reveal from './Reveal';
+import Decor from './Decor';
 import { security } from '@/content/site';
 
 // Иконки в том же порядке, что и пункты безопасности в content/site.ts
@@ -7,7 +8,8 @@ const icons: LucideIcon[] = [Database, Lock, UserCheck, KeyRound, EyeOff];
 
 export default function Security() {
   return (
-    <section aria-labelledby="security-title" className="band px-6 py-24">
+    <section aria-labelledby="security-title" className="relative overflow-hidden band px-6 py-24">
+      <Decor left="rings" right="cube" />
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Безопасность</p>
