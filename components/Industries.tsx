@@ -1,5 +1,19 @@
+import {
+  Building2,
+  Car,
+  Dumbbell,
+  GraduationCap,
+  ShoppingBag,
+  Scissors,
+  Stethoscope,
+  UtensilsCrossed,
+  type LucideIcon,
+} from 'lucide-react';
 import Reveal from './Reveal';
 import { industries } from '@/content/site';
+
+// Иконки в том же порядке, что и отрасли в content/site.ts
+const icons: LucideIcon[] = [Scissors, Stethoscope, Car, Dumbbell, UtensilsCrossed, ShoppingBag, GraduationCap, Building2];
 
 export default function Industries() {
   return (
@@ -13,14 +27,20 @@ export default function Industries() {
         </Reveal>
 
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {industries.map((item, i) => (
-            <Reveal key={item.title} delay={(i % 4) * 0.04}>
-              <article className="card-hover glass h-full rounded-2xl p-5">
-                <h3 className="text-base font-medium">{item.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-neutral-400">{item.text}</p>
-              </article>
-            </Reveal>
-          ))}
+          {industries.map((item, i) => {
+            const Icon = icons[i];
+            return (
+              <Reveal key={item.title} delay={(i % 4) * 0.04}>
+                <article className="card-tone card-hover h-full rounded-2xl p-5">
+                  <div className="tile flex h-10 w-10 items-center justify-center rounded-lg">
+                    {Icon && <Icon aria-hidden="true" className="h-4 w-4 text-white" />}
+                  </div>
+                  <h3 className="mt-5 text-base font-medium">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-neutral-400">{item.text}</p>
+                </article>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

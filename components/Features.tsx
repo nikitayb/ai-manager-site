@@ -7,7 +7,7 @@ const iconMap = Icons as unknown as Record<string, LucideIcon>;
 
 export default function Features() {
   return (
-    <section id="features" aria-labelledby="features-title" className="px-6 py-24">
+    <section id="features" aria-labelledby="features-title" className="band px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Возможности</p>
@@ -21,11 +21,14 @@ export default function Features() {
             const Icon = iconMap[f.icon];
             return (
               <Reveal key={f.title} delay={(i % 3) * 0.05}>
-                <article className="card-hover glass h-full rounded-2xl p-6">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/5">
-                    {Icon && <Icon aria-hidden="true" className="h-5 w-5 text-neutral-200" />}
+                <article className="card-tone card-hover h-full rounded-2xl p-6">
+                  <div className="flex items-center justify-between">
+                    <div className="tile flex h-11 w-11 items-center justify-center rounded-xl">
+                      {Icon && <Icon aria-hidden="true" className="h-5 w-5 text-white" />}
+                    </div>
+                    <span className="font-display text-xs text-neutral-600">{String(i + 1).padStart(2, '0')}</span>
                   </div>
-                  <h3 className="mt-5 text-base font-medium">{f.title}</h3>
+                  <h3 className="mt-6 text-base font-medium">{f.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-neutral-400">{f.text}</p>
                 </article>
               </Reveal>
