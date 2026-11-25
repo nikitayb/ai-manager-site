@@ -19,7 +19,7 @@ const icons: LucideIcon[] = [Scissors, Stethoscope, Car, Dumbbell, UtensilsCross
 export default function Industries() {
   return (
     <section id="industries" aria-labelledby="industries-title" className="relative overflow-hidden px-6 py-24">
-      <Decor left="icons" right="cube" />
+      <Decor left="industries" right="cube" />
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Решения</p>

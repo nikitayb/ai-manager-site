@@ -7,7 +7,7 @@ export default function Benefits() {
   const Check = Icons.Check;
   return (
     <section aria-labelledby="benefits-title" className="relative overflow-hidden px-6 py-24">
-      <Decor left="cube" />
+      <Decor left="clock" />
       <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Преимущества</p>

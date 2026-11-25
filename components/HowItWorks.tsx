@@ -5,7 +5,7 @@ import { steps } from '@/content/site';
 export default function HowItWorks() {
   return (
     <section id="how" aria-labelledby="how-title" className="relative overflow-hidden px-6 py-24">
-      <Decor left="rings" right="wave" />
+      <Decor left="flow" right="wave" />
       <div className="mx-auto max-w-5xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Как это работает</p>

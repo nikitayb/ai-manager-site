@@ -5,7 +5,7 @@ import { integrations } from '@/content/site';
 export default function Integrations() {
   return (
     <section aria-labelledby="integrations-title" className="relative overflow-hidden px-6 py-20">
-      <Decor left="rings" right="icons" />
+      <Decor left="channels" right="rings" />
       <Reveal className="mx-auto max-w-5xl text-center">
         <h2 id="integrations-title" className="text-2xl font-medium sm:text-3xl">
           Работает там, где общаются ваши клиенты

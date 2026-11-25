@@ -7,7 +7,7 @@ import { pricing } from '@/content/site';
 export default function Pricing() {
   return (
     <section id="pricing" aria-labelledby="pricing-title" className="relative overflow-hidden px-6 py-24">
-      <Decor left="cube" right="icons" />
+      <Decor left="price" right="cube" />
       <div className="mx-auto max-w-4xl">
         <Reveal className="text-center">
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Тарифы</p>
