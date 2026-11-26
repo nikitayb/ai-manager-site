@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { scenarios } from '@/content/site';
+import { scenarios, siteConfig } from '@/content/site';
 
 export default function ScenarioDemo() {
   const [activeId, setActiveId] = useState(scenarios[0].id);
@@ -32,8 +32,8 @@ export default function ScenarioDemo() {
 
       <div className="glass rounded-2xl p-5">
         <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-3 text-sm">
-          <span>AI Manager</span>
-          <span className="text-xs text-neutral-500">Демонстрационный пример</span>
+          <span>{siteConfig.name}</span>
+          <span className="text-xs text-neutral-500">Пример диалога</span>
         </div>
 
         <div key={scenario.id} className="flex min-h-[260px] flex-col gap-3">

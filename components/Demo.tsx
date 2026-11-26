@@ -8,12 +8,12 @@ export default function Demo() {
       <SectionArtwork kind="demo" />
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Демонстрация</p>
+          <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Сценарии</p>
           <h2 id="demo-title" className="mt-3 text-3xl font-medium sm:text-5xl">
             Посмотрите, как AI-менеджер общается с клиентами
           </h2>
           <p className="mt-4 max-w-2xl text-neutral-400">
-            Выберите сценарий. Это демонстрационный пример на заранее подготовленных ответах, а не работающий AI.
+            Выберите задачу, чтобы посмотреть, как может проходить диалог с клиентом.
           </p>
         </Reveal>
         <Reveal delay={0.1} className="mt-12">

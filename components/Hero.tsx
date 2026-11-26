@@ -1,5 +1,6 @@
 import SectionArtwork from "./SectionArtwork";
 import ChatPanel from './ChatPanel';
+import { siteConfig } from '@/content/site';
 
 export default function Hero() {
   return (
@@ -12,7 +13,7 @@ export default function Hero() {
         <span className="eyebrow">AI ДЛЯ СОВРЕМЕННОГО БИЗНЕСА</span>
 
         <h1 className="mt-6 text-4xl font-medium leading-tight tracking-tight sm:text-6xl">
-          Ваш интеллектуальный AI-менеджер для бизнеса
+          {siteConfig.name} — AI-менеджер для бизнеса
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-400 sm:text-lg">
@@ -21,13 +22,19 @@ export default function Hero() {
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3">
-          <a href="#demo" className="btn-primary focus-ring">Попробовать AI</a>
+          <a href="#demo" className="btn-primary focus-ring">Посмотреть сценарии</a>
           <a href="#features" className="btn-ghost focus-ring">Узнать возможности</a>
         </div>
 
-        <div className="mx-auto mt-14 max-w-xl">
-          <ChatPanel />
-          <p className="mt-3 text-xs text-neutral-500">Демонстрационный пример: ответы заранее подготовлены</p>
+        <div className="hero-dialogue">
+          <figure className="hero-robot" aria-hidden="true">
+            <div className="hero-robot-orbit" />
+            <img src="/artwork/assistant-robot.webp" width={760} height={760} alt="" decoding="async" />
+          </figure>
+          <div className="hero-dialogue-chat">
+            <ChatPanel />
+            <p className="mt-3 text-xs text-neutral-400">Пример диалога с клиентом</p>
+          </div>
         </div>
       </div>
     </section>

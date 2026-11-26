@@ -15,10 +15,9 @@ export default function Integrations() {
           {integrations.map((item) => (
             <li
               key={item.name}
-              className="card-hover glass flex h-20 min-w-[180px] items-center justify-center rounded-2xl px-6 text-sm text-neutral-200"
+              className="card-hover glass flex h-20 w-full max-w-[190px] flex-[1_1_140px] flex-col items-center justify-center rounded-2xl px-6 text-sm text-neutral-200"
             >
-              {/* TODO: заменить текст на официальный логотип из public/logos (см. README) */}
-              {item.name}
+              <span>{item.name}</span>
             </li>
           ))}
         </ul>

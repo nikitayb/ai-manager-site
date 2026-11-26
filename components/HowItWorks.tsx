@@ -1,39 +1,30 @@
-import SectionArtwork from "./SectionArtwork";
+import SectionArtwork from './SectionArtwork';
 import Reveal from './Reveal';
 import { steps } from '@/content/site';
 
 export default function HowItWorks() {
   return (
-    <section id="how" aria-labelledby="how-title" className="section-theme px-6 py-24">
+    <section id="how" aria-labelledby="how-title" className="section-theme process-section px-6 py-24">
       <SectionArtwork kind="process" />
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
         <Reveal>
-          <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Как это работает</p>
-          <h2 id="how-title" className="mt-3 text-3xl font-medium sm:text-5xl">
-            Пять шагов до первого диалога
+          <p className="process-label">Как это работает</p>
+          <h2 id="how-title" className="mt-3 max-w-2xl text-3xl font-medium tracking-tight sm:text-5xl">
+            Шесть шагов до первого диалога
           </h2>
         </Reveal>
 
-        <div className="relative mt-14">
-          {/* Соединительная линия между шагами (только на десктопе) */}
-          <div
-            aria-hidden="true"
-            className="absolute left-0 right-0 top-5 hidden h-px bg-gradient-to-r from-transparent via-white/25 to-transparent md:block"
-          />
-          <ol className="relative grid gap-8 md:grid-cols-5 md:gap-4">
-            {steps.map((step, i) => (
-              <li key={step.title} className="list-none">
-                <Reveal delay={i * 0.08}>
-                  <span className="relative z-10 flex h-10 w-10 items-center justify-center rounded-full border border-white/25 bg-ink text-sm font-medium shadow-[0_0_18px_rgba(255,255,255,0.12)]">
-                    {i + 1}
-                  </span>
-                  <h3 className="mt-5 text-sm font-medium">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-neutral-400">{step.text}</p>
-                </Reveal>
-              </li>
-            ))}
-          </ol>
-        </div>
+        <ol className="process-steps">
+          {steps.map((step, i) => (
+            <li key={step.title}>
+              <Reveal delay={i * 0.08} className="process-step">
+                <span className="process-number" aria-hidden="true">{i + 1}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </Reveal>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );

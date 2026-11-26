@@ -3,7 +3,6 @@ import * as Icons from 'lucide-react';
 import Reveal from './Reveal';
 import { pricing } from '@/content/site';
 
-// Один тариф. Цену и список функций меняйте в content/site.ts.
 export default function Pricing() {
   const Check = Icons.Check;
   return (
@@ -13,7 +12,7 @@ export default function Pricing() {
         <Reveal className="text-center">
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Тарифы</p>
           <h2 id="pricing-title" className="mt-3 text-3xl font-medium sm:text-5xl">
-            Простой тариф для вашего бизнеса
+            Что входит в подключение
           </h2>
         </Reveal>
 
@@ -22,12 +21,8 @@ export default function Pricing() {
             <div className="flex flex-col gap-2 border-b border-white/10 pb-6 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <h3 className="text-lg font-medium">{pricing.name}</h3>
-                <p className="mt-1 text-xs text-neutral-500">{pricing.demoNote}</p>
               </div>
-              <p className="text-4xl font-medium">
-                {pricing.price.toLocaleString('ru-RU')} {pricing.currency}
-                <span className="ml-2 text-sm font-normal text-neutral-400">{pricing.period}</span>
-              </p>
+              <p className="text-lg font-medium text-neutral-200">Стоимость по запросу</p>
             </div>
 
             <ul className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -40,8 +35,7 @@ export default function Pricing() {
             </ul>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#contact" className="btn-primary focus-ring flex-1">Подключить</a>
-              <a href="#contact" className="btn-ghost focus-ring flex-1">Связаться с нами</a>
+              <a href="#contact" className="btn-primary focus-ring flex-1">Обсудить подключение</a>
             </div>
           </div>
         </Reveal>

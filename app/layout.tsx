@@ -9,10 +9,10 @@ const inter = Inter({
   display: 'swap',
 });
 
-const deploymentUrl = process.env.CF_PAGES_URL || siteConfig.url;
+const deploymentUrl = siteConfig.url || process.env.CF_PAGES_URL;
 
 export const metadata: Metadata = {
-  metadataBase: new URL(deploymentUrl),
+  metadataBase: deploymentUrl ? new URL(deploymentUrl) : undefined,
   title: {
     default: `${siteConfig.name} — AI-менеджер для бизнеса`,
     template: `%s — ${siteConfig.name}`,
