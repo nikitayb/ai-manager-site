@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Sora:wght@500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -99,6 +100,61 @@ body {
   border-color: rgba(255, 255, 255, 0.3);
   transform: translateY(-3px);
   box-shadow: 0 0 32px rgba(255, 255, 255, 0.12);
+}
+
+/* Тонкая полоса фона для чередования секций */
+.band {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.025), rgba(255, 255, 255, 0));
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Карточка: чуть светлее фона, с верхним светлым бликом */
+.card-tone {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+
+/* Движение декоративных элементов по бокам секций */
+
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Светящаяся линия между этапами и каналами */
+.line-flow {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+  background-size: 200% 100%;
+  animation: lineSweep 4s linear infinite;
+}
+
+@keyframes lineSweep {
+  from { background-position: 100% 0; }
+  to { background-position: -100% 0; }
+}
+
+/* Свечение при наведении (без цветных оттенков) */
+.glow-hover {
+  transition: box-shadow 0.3s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 36px rgba(255, 255, 255, 0.1);
+}
+
+/* Окно мессенджера */
+.window {
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
 }
 
 .focus-ring:focus-visible {

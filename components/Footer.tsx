@@ -1,12 +1,13 @@
 import { navItems, siteConfig } from '@/content/site';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 px-6 py-14">
       <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-4">
         <div className="md:col-span-1">
-          <a href="#top" className="focus-ring flex items-center gap-2 text-sm font-medium">
-            <span aria-hidden="true" className="inline-block h-5 w-5 rounded-md bg-white" />
+          <a href="#top" className="focus-ring flex items-center gap-2 font-display text-sm font-medium tracking-tight">
+            <Logo size={24} className="text-white" />
             {siteConfig.name}
           </a>
           <p className="mt-3 text-sm leading-relaxed text-neutral-500">

@@ -1,12 +1,10 @@
-import SectionArtwork from "./SectionArtwork";
 import Reveal from './Reveal';
 import { faq } from '@/content/site';
 
 // Раскрывающиеся вопросы на <details>, работают без JavaScript
 export default function FAQ() {
   return (
-    <section id="faq" aria-labelledby="faq-title" className="section-theme px-6 py-24">
-      <SectionArtwork kind="faq" />
+    <section id="faq" aria-labelledby="faq-title" className="relative overflow-hidden px-6 py-24">
       <div className="mx-auto max-w-3xl">
         <Reveal className="text-center">
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">FAQ</p>

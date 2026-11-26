@@ -1,10 +1,14 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Integrations from '@/components/Integrations';
+import Showcase from '@/components/Showcase';
 import Features from '@/components/Features';
+import ProcessFlow from '@/components/ProcessFlow';
 import Demo from '@/components/Demo';
 import Industries from '@/components/Industries';
 import HowItWorks from '@/components/HowItWorks';
+import Setup from '@/components/Setup';
+import Handoff from '@/components/Handoff';
 import Benefits from '@/components/Benefits';
 import Pricing from '@/components/Pricing';
 import Security from '@/components/Security';
@@ -22,10 +26,14 @@ export default function HomePage() {
       <main>
         <Hero />
         <Integrations />
+        <Showcase />
         <Features />
+        <ProcessFlow />
         <Demo />
         <Industries />
         <HowItWorks />
+        <Setup />
+        <Handoff />
         <Benefits />
         <Pricing />
         <Security />

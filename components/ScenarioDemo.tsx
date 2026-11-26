@@ -32,7 +32,7 @@ export default function ScenarioDemo() {
 
       <div className="glass rounded-2xl p-5">
         <div className="mb-4 flex items-center justify-between border-b border-white/10 pb-3 text-sm">
-          <span>AI Manager</span>
+          <span>Nimbus Pulse</span>
           <span className="text-xs text-neutral-500">Демонстрационный пример</span>
         </div>
 

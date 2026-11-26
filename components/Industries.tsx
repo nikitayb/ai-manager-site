@@ -17,8 +17,9 @@ export default function Industries() {
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {industries.map((item, i) => (
             <Reveal key={item.title} delay={(i % 4) * 0.04}>
-              <article className="card-hover glass h-full rounded-2xl p-5">
-                <h3 className="text-base font-medium">{item.title}</h3>
+              <article className="card-tone card-hover h-full rounded-2xl p-5">
+                <span className="font-display text-xs text-neutral-500">{String(i + 1).padStart(2, '0')}</span>
+                <h3 className="mt-5 text-base font-medium">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-neutral-400">{item.text}</p>
               </article>
             </Reveal>

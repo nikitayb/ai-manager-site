@@ -1,6 +1,6 @@
-# AI Manager — сайт
+# Nimbus Pulse — сайт
 
-Презентационный и коммерческий сайт AI Manager на Next.js (App Router), TypeScript, Tailwind CSS и Framer Motion.
+Презентационный и коммерческий сайт Nimbus Pulse (AI-менеджер для бизнеса) на Next.js (App Router), TypeScript, Tailwind CSS и Framer Motion.
 
 ## Запуск
 
