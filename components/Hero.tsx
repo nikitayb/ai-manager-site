@@ -1,9 +1,11 @@
+import SectionArtwork from "./SectionArtwork";
 import ChatPanel from './ChatPanel';
 import { siteConfig } from '@/content/site';
 
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden px-6 pb-24 pt-36">
+    <section id="top" className="section-theme relative overflow-hidden px-6 pb-24 pt-36">
+      <SectionArtwork kind="chat" />
       <div className="dot-grid pointer-events-none absolute inset-0" aria-hidden="true" />
       <div className="beam" aria-hidden="true" />
 
