@@ -3,7 +3,7 @@ import './globals.css';
 import { siteConfig } from '@/content/site';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(deploymentUrl),
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} — AI-менеджер для бизнеса`,
     template: `%s — ${siteConfig.name}`,
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${siteConfig.name} — AI-менеджер для бизнеса`,
     description: siteConfig.description,
-    url: deploymentUrl,
+    url: siteConfig.url,
     siteName: siteConfig.name,
     locale: 'ru_RU',
     type: 'website',
