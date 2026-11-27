@@ -1,50 +1,40 @@
-# `@img/sharp-wasm32`
+# @jridgewell/resolve-uri
 
-Prebuilt sharp for use with WebAssembly.
+> Resolve a URI relative to an optional base URI
 
-## Licensing
+Resolve any combination of absolute URIs, protocol-relative URIs, absolute paths, or relative paths.
 
-Copyright 2013 Lovell Fuller and others.
+## Installation
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-[https://www.apache.org/licenses/LICENSE-2.0](https://www.apache.org/licenses/LICENSE-2.0)
+```sh
+npm install @jridgewell/resolve-uri
+```
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+## Usage
 
-This software contains third-party libraries
-used under the terms of the following licenses:
+```typescript
+function resolve(input: string, base?: string): string;
+```
 
-| Library       | Used under the terms of                                                                                  |
-|---------------|----------------------------------------------------------------------------------------------------------|
-| aom           | BSD 2-Clause + [Alliance for Open Media Patent License 1.0](https://aomedia.org/license/patent-license/) |
-| cgif          | MIT License                                                                                              |
-| emscripten    | [MIT License](https://github.com/emscripten-core/emscripten/blob/main/LICENSE)                           |
-| expat         | MIT License                                                                                              |
-| glib          | LGPLv3                                                                                                   |
-| highway       | BSD 3-Clause                                                                                             |
-| lcms          | MIT License                                                                                              |
-| libexif       | LGPLv3                                                                                                   |
-| libffi        | MIT License                                                                                              |
-| libheif       | LGPLv3                                                                                                   |
-| libimagequant | [BSD 2-Clause](https://github.com/lovell/libimagequant/blob/main/COPYRIGHT)                              |
-| libnsgif      | MIT License                                                                                              |
-| libpng        | [libpng License](https://github.com/pnggroup/libpng/blob/master/LICENSE)                                 |
-| libtiff       | [libtiff License](https://gitlab.com/libtiff/libtiff/blob/master/LICENSE.md) (BSD-like)                  |
-| libultrahdr   | MIT License                                                                                              |
-| libvips       | LGPLv3                                                                                                   |
-| libwebp       | New BSD License                                                                                          |
-| mozjpeg       | [zlib License, IJG License, BSD 3-Clause](https://github.com/mozilla/mozjpeg/blob/master/LICENSE.md)     |
-| resvg         | MIT License                                                                                              |
-| zlib-ng       | [zlib License](https://github.com/zlib-ng/zlib-ng/blob/develop/LICENSE.md)                               |
+```js
+import resolve from '@jridgewell/resolve-uri';
 
-Use of libraries under the terms of the LGPLv3 is via the
-"any later version" clause of the LGPLv2 or LGPLv2.1.
+resolve('foo', 'https://example.com'); // => 'https://example.com/foo'
+```
 
-Please report any errors or omissions via
-https://github.com/lovell/sharp-libvips/issues/new
+| Input                 | Base                    | Resolution                     | Explanation                                                  |
+|-----------------------|-------------------------|--------------------------------|--------------------------------------------------------------|
+| `https://example.com` | _any_                   | `https://example.com/`         | Input is normalized only                                     |
+| `//example.com`       | `https://base.com/`     | `https://example.com/`         | Input inherits the base's protocol                           |
+| `//example.com`       | _rest_                  | `//example.com/`               | Input is normalized only                                     |
+| `/example`            | `https://base.com/`     | `https://base.com/example`     | Input inherits the base's origin                             |
+| `/example`            | `//base.com/`           | `//base.com/example`           | Input inherits the base's host and remains protocol relative |
+| `/example`            | _rest_                  | `/example`                     | Input is normalized only                                     |
+| `example`             | `https://base.com/dir/` | `https://base.com/dir/example` | Input is joined with the base                                |
+| `example`             | `https://base.com/file` | `https://base.com/example`     | Input is joined with the base without its file               |
+| `example`             | `//base.com/dir/`       | `//base.com/dir/example`       | Input is joined with the base's last directory               |
+| `example`             | `//base.com/file`       | `//base.com/example`           | Input is joined with the base without its file               |
+| `example`             | `/base/dir/`            | `/base/dir/example`            | Input is joined with the base's last directory               |
+| `example`             | `/base/file`            | `/base/example`                | Input is joined with the base without its file               |
+| `example`             | `base/dir/`             | `base/dir/example`             | Input is joined with the base's last directory               |
+| `example`             | `base/file`             | `base/example`                 | Input is joined with the base without its file               |
