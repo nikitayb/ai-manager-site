@@ -1,43 +1,15 @@
-# Nimbus Pulse — сайт
+# `@img/colour`
 
-Презентационный и коммерческий сайт Nimbus Pulse (AI-менеджер для бизнеса) на Next.js (App Router), TypeScript, Tailwind CSS и Framer Motion.
+The latest version of the
+[color](https://www.npmjs.com/package/color)
+package is now ESM-only,
+however some JavaScript runtimes do not yet support this,
+which includes versions of Node.js prior to 20.19.0.
 
-## Запуск
+This package converts the `color` package and its dependencies,
+all of which are MIT-licensed, to CommonJS.
 
-```bash
-npm install
-npm run dev     # разработка: http://localhost:3000
-npm run build   # production-сборка
-npm run start   # запуск собранной версии
-```
-
-Перед первым запуском проверьте версии в `package.json` и при необходимости обновите их командой `npm install`.
-
-## Структура
-
-- `app/` — layout (метатеги, шрифт Inter), главная страница, страницы документов `/privacy` и `/terms`.
-- `components/` — секции главной: Navbar, Hero, ChatPanel, Integrations, Features, Demo (ScenarioDemo), Industries, HowItWorks, Benefits, Pricing, Security, FAQ, FinalCTA (ContactForm), Footer, Reveal.
-- `content/site.ts` — все тексты, сценарии демо, список возможностей, отрасли, тариф и FAQ. Здесь меняются цена, контакты и тексты.
-- `public/logos/` — сюда положите официальные логотипы интеграций (см. ниже).
-
-## Что нужно заменить перед запуском
-
-- **Контакты:** `email`, `telegram` и `url` в `content/site.ts` (сейчас заглушки `example`).
-- **Логотипы Telegram, WhatsApp Business и VK:** сейчас в блоке интеграций текст. Положите официальные SVG в `public/logos/` и замените текстовые плашки в `components/Integrations.tsx` на `<img>`, соблюдая брендбуки.
-- **Тарифы:** цена и список функций в `pricing` (`content/site.ts`). Сейчас это демонстрационная цена.
-- **Политика конфиденциальности и пользовательское соглашение:** сейчас черновики в `app/privacy` и `app/terms`.
-- **Форма заявки:** сейчас валидация на клиенте, отправка не подключена. Нужен обработчик или API-маршрут.
-- **Английская версия:** структура готова к переводу; тексты вынесены в `content/site.ts`, нужен `/en` маршрут и словарь.
-
-## Ограничения
-
-- Демо-чат и сценарии работают на заранее подготовленных ответах и помечены как демонстрационные. Реального AI, записи и оплаты в этой версии нет.
-- Цифр, отзывов и логотипов клиентов на сайте нет, чтобы не вводить в заблуждение.
-- Анимации уважают настройку «уменьшить движение» (`prefers-reduced-motion`).
-
-## Проверка перед запуском
-
-- `npm run build` без ошибок.
-- Все ссылки в навигации и подвале ведут к нужным секциям.
-- Формы показывают ошибки валидации и принимают корректные данные.
-- Адаптивность проверена на телефоне, планшете и десктопе.
+- [color](https://www.npmjs.com/package/color)
+- [color-convert](https://www.npmjs.com/package/color-convert)
+- [color-string](https://www.npmjs.com/package/color-string)
+- [color-name](https://www.npmjs.com/package/color-name)
