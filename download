@@ -1,1 +1,7 @@
-{"encryption.key":"DbrfahE4vRR4d8cOiHhVpUDepDUsMfdIed0lqfbsJ4I=","encryption.expire_at":1796859126588}
+node_modules/
+.next/
+out/
+.env*.local
+next-env.d.ts
+*.log
+.DS_Store
