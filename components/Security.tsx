@@ -1,9 +1,13 @@
+import SectionArtwork from "./SectionArtwork";
+import * as Icons from 'lucide-react';
 import Reveal from './Reveal';
 import { security } from '@/content/site';
 
 export default function Security() {
+  const Shield = Icons.ShieldCheck;
   return (
-    <section aria-labelledby="security-title" className="band px-6 py-24">
+    <section aria-labelledby="security-title" className="section-theme px-6 py-24">
+      <SectionArtwork kind="security" />
       <div className="mx-auto max-w-6xl">
         <Reveal>
           <p className="text-xs uppercase tracking-[0.14em] text-neutral-500">Безопасность</p>
@@ -15,9 +19,9 @@ export default function Security() {
         <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {security.map((item, i) => (
             <Reveal key={item.title} delay={(i % 3) * 0.05}>
-              <article className="card-tone card-hover h-full rounded-2xl p-6">
-                <span className="font-display text-xs text-neutral-500">{String(i + 1).padStart(2, '0')}</span>
-                <h3 className="mt-6 text-base font-medium">{item.title}</h3>
+              <article className="card-hover glass h-full rounded-2xl p-6">
+                <Shield aria-hidden="true" className="h-5 w-5 text-neutral-200" />
+                <h3 className="mt-4 text-base font-medium">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-neutral-400">{item.text}</p>
               </article>
             </Reveal>

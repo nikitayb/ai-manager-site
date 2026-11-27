@@ -3,7 +3,7 @@ import './globals.css';
 import { siteConfig } from '@/content/site';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: siteConfig.url ? new URL(siteConfig.url) : undefined,
   title: {
     default: `${siteConfig.name} — AI-менеджер для бизнеса`,
     template: `%s — ${siteConfig.name}`,
